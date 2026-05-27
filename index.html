@@ -302,8 +302,10 @@
 
     .info-photo {
       width: 100%;
-      aspect-ratio: 4/3;
-      object-fit: cover;
+      max-width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
     }
 
     .photo-caption {
@@ -411,8 +413,10 @@
 
     .side-photo {
       width: 100%;
-      aspect-ratio: 4/3;
-      object-fit: cover;
+      height: auto;
+      max-width: 100%;
+      display: block;
+      object-fit: contain;
       margin-top: 4px;
     }
 
@@ -428,8 +432,9 @@
 
     .photo-block img {
       width: 100%;
-      aspect-ratio: 4/3;
-      object-fit: cover;
+      height: auto;
+      display: block;
+      object-fit: contain;
     }
 
     /* ===== THREE COLUMNS SECTION ===== */
@@ -484,8 +489,9 @@
 
     .gallery-item img {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
+      height: auto;
+      display: block;
+      object-fit: contain;
       transition: transform 0.4s ease;
     }
     .gallery-item:hover img { transform: scale(1.04); }
@@ -493,10 +499,10 @@
     .gallery-item.tall { grid-row: span 2; }
 
     .gallery-item img.portrait {
-      aspect-ratio: 2/3;
+      /* natural portrait ratio preserved */
     }
     .gallery-item img.landscape {
-      aspect-ratio: 4/3;
+      /* natural landscape ratio preserved */
     }
 
     .gallery-caption {
@@ -630,7 +636,7 @@
 
         <img
           class="side-photo"
-          src="https://images.unsplash.com/photo-1536098561742-ca998e48cbcc?w=700&q=80"
+          src="images/shirakawagothylacine.webp"
           alt="Vesnice Shirakawa-go"
         />
         <p class="photo-caption">vesnice Shirakawa-go</p>
@@ -643,13 +649,13 @@
   <div class="photos-row">
     <div class="photo-block">
       <img
-        src="https://images.unsplash.com/photo-1578271887552-5ac3a72752bc?w=700&q=80"
+        src="images/thalcineFujiMT.webp"
         alt="Japonská ulice s Mt. Fuji"
       />
     </div>
     <div class="photo-block">
       <img
-        src="https://images.unsplash.com/photo-1604999333679-b86d54738315?w=700&q=80"
+        src="images/thalcinesakura.webp"
         alt="Shirakawa-go západ"
       />
       <p class="photo-caption">vesnice Shirakawa-go</p>
@@ -682,7 +688,7 @@
         <div class="gallery-item tall">
           <img
             class="portrait"
-            src="https://images.unsplash.com/photo-1597413545419-4013431e9f09?w=600&q=80"
+            src="images/thylacinejiraya.webp"
             alt="Naruto Boruto Shinobi Zato (Awaji)"
           />
           <p class="gallery-caption">Naruto Boruto Shinobi Zato (Awaji)</p>
@@ -691,7 +697,7 @@
         <div class="gallery-item">
           <img
             class="landscape"
-            src="https://images.unsplash.com/photo-1522383225653-ed111181a951?w=600&q=80"
+            src="images/thylacineAtomicDome.webp"
             alt="Shukkeen garden, Hiroshima"
           />
           <p class="gallery-caption">Shukkeen garden (Hiroshima)</p>
@@ -700,7 +706,7 @@
         <div class="gallery-item">
           <img
             class="landscape"
-            src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80"
+            src="images/thylacineOsakaCastle.webp"
             alt="Japonská zahrada"
           />
         </div>
