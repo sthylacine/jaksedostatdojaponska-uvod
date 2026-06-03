@@ -132,12 +132,12 @@
 
     /* images */
     .article-img { margin: 18px 0; }
-    .article-img img { width: 100%; object-fit: cover; }
-    .article-img.full img { aspect-ratio: 16/7; }
+    .article-img img { width: 100%; height: auto; display: block; }
+    .article-img.full img { max-height: 480px; object-fit: contain; }
     .article-img.half { float: left; width: 44%; margin: 4px 22px 14px 0; }
-    .article-img.half img { aspect-ratio: 4/3; }
+    .article-img.half img { object-fit: contain; }
     .article-img.half-right { float: right; width: 44%; margin: 4px 0 14px 22px; }
-    .article-img.half-right img { aspect-ratio: 4/3; }
+    .article-img.half-right img { object-fit: contain; }
     .clearfix::after { content: ''; display: table; clear: both; }
     .img-caption { font-size: 0.72rem; color: var(--grey); font-style: italic; text-align: center; margin-top: 4px; }
 
