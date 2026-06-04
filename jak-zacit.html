@@ -110,6 +110,9 @@
    .section-block {
   scroll-margin-top: 80px;
 }
+    .section-block + .section-block {
+      margin-top: 48px;
+    }
 
     .section-block h2 {
       font-family: var(--font-display);
@@ -132,12 +135,12 @@
 
     /* images */
     .article-img { margin: 18px 0; }
-    .article-img img { width: 100%; height: auto; display: block; }
+    .article-img img { width: 100%; height: auto; display: block; object-fit: contain; }
     .article-img.full img { max-height: 480px; object-fit: contain; }
     .article-img.half { float: left; width: 44%; margin: 4px 22px 14px 0; }
-    .article-img.half img { object-fit: contain; }
+    .article-img.half img { object-fit: contain; height: auto; }
     .article-img.half-right { float: right; width: 44%; margin: 4px 0 14px 22px; }
-    .article-img.half-right img { object-fit: contain; }
+    .article-img.half-right img { object-fit: contain; height: auto; }
     .clearfix::after { content: ''; display: table; clear: both; }
     .img-caption { font-size: 0.72rem; color: var(--grey); font-style: italic; text-align: center; margin-top: 4px; }
 
