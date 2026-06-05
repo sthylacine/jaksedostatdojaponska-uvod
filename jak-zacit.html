@@ -23,7 +23,7 @@
     }
 
     html { scroll-behavior: smooth; }
-    body { font-family: var(--font-body); color: var(--text); background: var(--offwhite); overflow-x: hidden; }
+    body { font-family: var(--font-body); color: var(--text); background: var(--white); overflow-x: hidden; }
     a { text-decoration: none; color: inherit; }
     img { display: block; max-width: 100%; }
 
@@ -121,32 +121,33 @@
       color: var(--black);
       margin-bottom: 12px; padding-bottom: 7px;
       border-bottom: 2px solid var(--red);
-      display: inline-block;
+      display: block; clear: both; width: 100%;
     }
 
     .section-block p {
       font-size: 0.9rem; line-height: 1.82;
-      color: #333; margin-bottom: 11px;
+      color: #000; margin-bottom: 11px;
     }
     .section-block p:last-child { margin-bottom: 0; }
     .section-block strong { font-weight: 700; color: var(--black); }
     .section-block a { color: var(--red); border-bottom: 1px solid transparent; transition: border-color 0.15s; }
     .section-block a:hover { border-color: var(--red); }
 
-    /* images */
-    .article-img { margin: 18px 0; }
+    /* images – variant 2: all images left, text right */
+    .article-img { float: left; width: 38%; margin: 4px 22px 14px 0; clear: left; }
     .article-img img { width: 100%; height: auto; display: block; object-fit: contain; }
-    .article-img.full img { max-height: 480px; object-fit: contain; }
-    .article-img.half { float: left; width: 44%; margin: 4px 22px 14px 0; }
+    .article-img.full { float: left; width: 38%; }
+    .article-img.full img { max-height: 280px; object-fit: contain; }
+    .article-img.half { float: left; width: 38%; }
     .article-img.half img { object-fit: contain; height: auto; }
-    .article-img.half-right { float: right; width: 44%; margin: 4px 0 14px 22px; }
+    .article-img.half-right { float: left; width: 38%; margin: 4px 22px 14px 0; }
     .article-img.half-right img { object-fit: contain; height: auto; }
     .clearfix::after { content: ''; display: table; clear: both; }
     .img-caption { font-size: 0.72rem; color: var(--grey); font-style: italic; text-align: center; margin-top: 4px; }
 
     /* ordered list inside article */
     .section-block ol { padding-left: 20px; margin: 10px 0 14px; }
-    .section-block ol li { font-size: 0.9rem; line-height: 1.8; color: #333; margin-bottom: 10px; }
+    .section-block ol li { font-size: 0.9rem; line-height: 1.8; color: #000; margin-bottom: 10px; }
 
     /* ===== SIDEBAR ===== */
     .sidebar { position: sticky; top: 72px; }
@@ -163,7 +164,7 @@
       color: #333; border-bottom: 1px solid #f0f0f0;
       transition: background 0.15s, color 0.15s;
     }
-    .sidebar-box ul li a:hover { background: var(--offwhite); color: var(--red); }
+    .sidebar-box ul li a:hover { background: var(--white); color: var(--red); }
     .sidebar-box ul li:last-child a { border-bottom: none; }
     .sidebar-img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; }
 
@@ -319,7 +320,7 @@
       <!-- 10 -->
       <div class="section-block" id="etiketa">
         <h2>10) Etiketa</h2>
-        <div class="article-img half-right">
+        <div class="article-img half">
           <img src="images/opice.webp" alt="Respekt je základ" />
           <p class="img-caption">Respekt je základ</p>
         </div>
