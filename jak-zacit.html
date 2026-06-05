@@ -4,8 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jak začít? – Jak se dostat do Japonska 2026 s Thylacine</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Oswald:wght@600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -20,12 +18,12 @@
       --light-grey: #e8e8e8;
       --text:       #2a2a2a;
       --font-display: 'Oswald', sans-serif;
-      --font-serif:   'Roboto', serif;
-      --font-body:    'Roboto', sans-serif;
+      --font-serif:   'Playfair Display', serif;
+      --font-body:    'Lato', sans-serif;
     }
 
     html { scroll-behavior: smooth; }
-    body { font-family: var(--font-body); color: var(--text); background: var(--white); overflow-x: hidden; }
+    body { font-family: var(--font-body); color: var(--text); background: var(--offwhite); overflow-x: hidden; }
     a { text-decoration: none; color: inherit; }
     img { display: block; max-width: 100%; }
 
@@ -118,38 +116,37 @@
 
     .section-block h2 {
       font-family: var(--font-display);
-      font-size: 1.08rem; font-weight: 700;
+      font-size: 1.05rem; font-weight: 700;
       text-transform: uppercase; letter-spacing: 0.06em;
       color: var(--black);
       margin-bottom: 12px; padding-bottom: 7px;
       border-bottom: 2px solid var(--red);
-      display: block; clear: both; width: 100%;
+      display: inline-block;
     }
 
     .section-block p {
       font-size: 0.9rem; line-height: 1.82;
-      color: #000; margin-bottom: 11px;
+      color: #333; margin-bottom: 11px;
     }
     .section-block p:last-child { margin-bottom: 0; }
     .section-block strong { font-weight: 700; color: var(--black); }
     .section-block a { color: var(--red); border-bottom: 1px solid transparent; transition: border-color 0.15s; }
     .section-block a:hover { border-color: var(--red); }
 
-    /* images – variant 2: all images left, text right */
-    .article-img { float: left; width: 38%; margin: 4px 22px 14px 0; clear: left; }
+    /* images */
+    .article-img { margin: 18px 0; }
     .article-img img { width: 100%; height: auto; display: block; object-fit: contain; }
-    .article-img.full { float: left; width: 38%; }
-    .article-img.full img { max-height: 280px; object-fit: contain; }
-    .article-img.half { float: left; width: 38%; }
+    .article-img.full img { max-height: 480px; object-fit: contain; }
+    .article-img.half { float: left; width: 44%; margin: 4px 22px 14px 0; }
     .article-img.half img { object-fit: contain; height: auto; }
-    .article-img.half-right { float: left; width: 38%; margin: 4px 22px 14px 0; }
+    .article-img.half-right { float: right; width: 44%; margin: 4px 0 14px 22px; }
     .article-img.half-right img { object-fit: contain; height: auto; }
     .clearfix::after { content: ''; display: table; clear: both; }
-    .img-caption { font-size: 0.55rem; color: var(--grey); font-style: italic; text-align: center; margin-top: 4px; }
+    .img-caption { font-size: 0.72rem; color: var(--grey); font-style: italic; text-align: center; margin-top: 4px; }
 
     /* ordered list inside article */
     .section-block ol { padding-left: 20px; margin: 10px 0 14px; }
-    .section-block ol li { font-size: 0.9rem; line-height: 1.8; color: #000; margin-bottom: 10px; }
+    .section-block ol li { font-size: 0.9rem; line-height: 1.8; color: #333; margin-bottom: 10px; }
 
     /* ===== SIDEBAR ===== */
     .sidebar { position: sticky; top: 72px; }
@@ -166,7 +163,7 @@
       color: #333; border-bottom: 1px solid #f0f0f0;
       transition: background 0.15s, color 0.15s;
     }
-    .sidebar-box ul li a:hover { background: var(--white); color: var(--red); }
+    .sidebar-box ul li a:hover { background: var(--offwhite); color: var(--red); }
     .sidebar-box ul li:last-child a { border-bottom: none; }
     .sidebar-img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; }
 
