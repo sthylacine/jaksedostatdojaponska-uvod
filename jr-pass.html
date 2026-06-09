@@ -130,7 +130,17 @@
     .info-box-body p:last-child { margin-bottom: 0; }
     .info-box-body strong { color: var(--black); font-weight: 700; }
 
-    .img-caption { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; margin-bottom: 24px; }
+    /* duplicate rule removed */
+
+    /* sidebar column images */
+    .col-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
+      margin-bottom: 16px;
+      border-radius: 4px;
+    }
 
     /* ===== ARTICLE ===== */
     .article {}
@@ -156,8 +166,8 @@
 
     /* article images */
     .article-img { margin: 20px 0; }
-    .article-img img { width: 100%; height: auto; display: block; object-fit: contain; }
-    .article-img.full img { aspect-ratio: 16/7; }
+    .article-img img { width: 100%; height: auto; display: block; object-fit: contain; max-width: 100%; }
+    .article-img.full img { max-height: 420px; object-fit: contain; height: auto; }
     .img-caption { font-size: 0.72rem; color: var(--grey); font-style: italic; text-align: center; margin-top: 4px; }
 
     /* intro block – image left, text right */
@@ -170,8 +180,8 @@
     }
     .intro-block img {
       width: 100%;
-      aspect-ratio: 4/3;
-      object-fit: cover;
+      height: auto;
+      object-fit: contain;
     }
     .intro-text h2 {
       font-family: var(--font-display);
@@ -280,11 +290,6 @@
         </div>
       </div>
 
-      <img
-        class="col-img"
-        src="images/JRPass5.webp.jpg"
-        alt="JR PASS kartička"
-      />
 
       <img
         class="col-img"
@@ -338,8 +343,8 @@
         <p>Po výměně poukazu za originál na letišti nebo nádráží v Japonsku jsem mohla začít JR Pass používat hned v den nabytí platnosti. Kartičku budete vkládat vždy do terminálu jemu určenému při příchodu k nástupišti. Terminál si jízdenku vezme a vysune ji na protější straně, zároveň se rozsvítí zelená a otevřou se dvířka asi jako v metru. Můžete jít tedy vesele dál na nástupiště a do vlaku. To samé se děje i při výstupu. <strong>Mějte proto JR Pass vždy po ruce.</strong> Pokud by nastal problém s načtením, je vždy po ruce hlídka a pomůže Vám.</p>
 
         <div class="article-img full">
-          <img src="images/JRPass5.webp.jpg" />
-          <p class="img-caption">JR PASS</p>
+          <img src="images/JRPass5.webp.jpg" alt="JR Pass kartička – průkaz pro cestování vlaky po Japonsku" />
+          <p class="img-caption">JR PASS kartička</p>
         </div>
       </div>
 
