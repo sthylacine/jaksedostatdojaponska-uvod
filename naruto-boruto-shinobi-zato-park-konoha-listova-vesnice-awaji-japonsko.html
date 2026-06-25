@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Naruto & Boruto Shinobi-zato – tematický park Nijigen no Mori na ostrově Awaji v Japonsku. Recenze, vstupenky, doprava a tipy od Thylacine na zážitkovou ninja vesnici Konoha." />
+  <title>Naruto a Boruto Shinobizato ninja vesnice – Jak se dostat do Japonska s Thylacine</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Oswald:wght@600;700&family=Roboto:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --red:        #e63027;
+      --red-dark:   #c0251d;
+      --black:      #111111;
+      --white:      #ffffff;
+      --offwhite:   #f9f7f5;
+      --grey:       #6b6b6b;
+      --light-grey: #e8e8e8;
+      --text:       #2a2a2a;
+      --font-display: 'Oswald', sans-serif;
+      --font-serif:   'Playfair Display', serif;
+      --font-body:    'Roboto', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); color: var(--text); background: var(--offwhite); overflow-x: hidden; }
+    a { text-decoration: none; color: inherit; }
+    img { display: block; max-width: 100%; }
+
+    /* ===== NAVBAR ===== */
+    .navbar {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--black);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 28px; height: 52px;
+      box-shadow: 0 2px 10px rgba(0,0,0,.4);
+    }
+    .navbar-brand {
+      display: flex; align-items: center; gap: 10px;
+      color: var(--white); font-family: var(--font-display);
+      font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; white-space: nowrap;
+    }
+    .navbar-brand svg { width: 18px; height: 18px; fill: var(--white); opacity: 0.85; }
+    .nav-links { display: flex; align-items: center; list-style: none; gap: 2px; }
+    .nav-links li { position: relative; }
+    .nav-links li a, .nav-links li .nav-toggle {
+      display: flex; align-items: center; gap: 4px;
+      padding: 6px 13px; color: #ddd; font-family: var(--font-body);
+      font-size: 0.83rem; transition: color 0.15s;
+      cursor: pointer; background: none; border: none; white-space: nowrap;
+    }
+    .nav-links li a:hover, .nav-links li .nav-toggle:hover { color: var(--white); }
+    .nav-links li a.active { color: var(--red); font-weight: 700; }
+    .dropdown {
+      display: none; position: absolute; top: 100%; right: 0;
+      background: #1a1a1a; min-width: 180px; list-style: none;
+      box-shadow: 0 6px 20px rgba(0,0,0,.5); border-top: 2px solid var(--red);
+    }
+    .nav-links li:hover .dropdown { display: block; }
+    .dropdown li a { display: block; padding: 10px 18px; font-size: 0.82rem; color: #ccc; border-bottom: 1px solid #2a2a2a; }
+    .dropdown li a:hover { background: #222; color: #fff; }
+    .nav-toggle svg { width: 10px; height: 10px; fill: #aaa; }
+    .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .nav-hamburger span { display: block; width: 22px; height: 2px; background: #fff; }
+    @media (max-width: 820px) {
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+      .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 52px; left: 0; right: 0; background: #111; padding: 10px 0 16px; gap: 0; align-items: flex-start; }
+      .nav-links.open li { width: 100%; }
+      .nav-links.open li a, .nav-links.open li .nav-toggle { padding: 11px 24px; width: 100%; }
+      .nav-links.open .dropdown { position: static; display: none; background: #1e1e1e; border-top: none; border-left: 3px solid var(--red); margin-left: 20px; min-width: unset; box-shadow: none; }
+      .nav-links.open .has-dropdown.open .dropdown { display: block; }
+    }
+
+    /* ===== PAGE HERO ===== */
+    .page-hero {
+      background: var(--white);
+      padding: 48px 24px 18px;
+      text-align: center;
+      border-bottom: 1px solid var(--light-grey);
+    }
+    .page-hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.08em; color: var(--black);
+    }
+    .page-hero .subtitle {
+      font-family: var(--font-display);
+      font-size: 0.97rem; font-weight: 700;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--black); margin-top: 8px;
+    }
+    .hero-rule { width: 60px; height: 3px; background: var(--red); margin: 14px auto 0; }
+
+    /* ===== HERO IMAGE ===== */
+    .hero-img {
+      max-width: 500px;
+      margin: 32px auto 0;
+    }
+    .hero-img img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+
+    /* ===== MAIN LAYOUT ===== */
+    .page-wrap {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 44px 24px 80px;
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      gap: 50px;
+      align-items: start;
+    }
+
+    /* ===== LEFT SIDEBAR ===== */
+    .info-col { position: sticky; top: 72px; }
+
+    .info-box {
+      background: var(--white);
+      border: 1px solid var(--light-grey);
+      margin-bottom: 24px;
+    }
+    .info-box-title {
+      font-family: var(--font-display);
+      font-size: 0.82rem; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--red);
+      padding: 12px 16px 4px;
+      border-bottom: 1px solid var(--light-grey);
+    }
+    .info-box-body {
+      padding: 14px 16px;
+      font-size: 0.9rem;
+      line-height: 1.82;
+      color: #333;
+    }
+    .info-box-body p { margin-bottom: 10px; }
+    .info-box-body p:last-child { margin-bottom: 0; }
+    .info-box-body strong { color: var(--black); font-weight: 700; }
+    .info-box-body a { color: var(--red); word-break: break-all; }
+    .info-box-body a:hover { text-decoration: underline; }
+
+    .col-img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      display: block;
+      margin-bottom: 20px;
+    }
+    .col-img-half {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+    .col-img-half img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      display: block;
+    }
+
+    /* ===== ARTICLE ===== */
+    .article {}
+
+    .section-block { margin-bottom: 40px; }
+
+    .section-block h2 {
+      font-family: var(--font-display);
+      font-size: 1.50rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.06em;
+      color: var(--black);
+      margin-bottom: 14px;
+    }
+
+    .section-block p {
+      font-size: 0.9rem; line-height: 1.82;
+      color: #333; margin-bottom: 11px;
+    }
+    .section-block p:last-child { margin-bottom: 0; }
+    .section-block strong { font-weight: 700; color: var(--black); }
+    .section-block a { color: var(--red); }
+    .section-block a:hover { text-decoration: underline; }
+
+    /* intro blockquote style */
+    .intro-bq {
+      border-left: 4px solid var(--red);
+      padding: 16px 20px;
+      margin-bottom: 18px;
+      background: var(--white);
+    }
+    .intro-bq p {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 1.05rem !important;
+      line-height: 1.7 !important;
+      color: var(--black) !important;
+      margin: 0 !important;
+    }
+
+    .bold-note {
+      font-weight: 700;
+      font-size: 0.93rem;
+      color: var(--black);
+      margin-bottom: 14px;
+      display: block;
+    }
+
+    /* article image */
+    .article-img { margin: 20px 0; }
+    .article-img img { width: 100%; height: auto; object-fit: contain; display: block; }
+    .article-img.full img { max-height: 420px; object-fit: contain; }
+    .img-caption { font-size: 0.72rem; color: var(--grey); font-style: italic; text-align: center; margin-top: 4px; }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--black); color: #999;
+      text-align: center; padding: 22px 24px;
+      font-size: 0.78rem; line-height: 1.7;
+    }
+    footer span { color: #ddd; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 820px) {
+      .page-wrap { grid-template-columns: 1fr; gap: 36px; }
+      .info-col { position: static; }
+      .hero-img { max-width: 100%; }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Naruto & Boruto Shinobi-zato – ninja vesnice Konoha na ostrově Awaji",
+  "description": "Recenze a tipy na návštěvu tematického parku Naruto & Boruto Shinobi-zato v Nijigen no Mori na ostrově Awaji v Japonsku.",
+  "author": {
+    "@type": "Person",
+    "name": "Thylacine"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Jak se dostat do Japonska s Thylacine",
+    "url": "https://sthylacine.github.io/jaksedostatdojaponska-uvod/naruto-boruto-shinobi-zato-park-konoha-listova-vesnice-awaji-japonsko"
+  }
+}
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "TouristAttraction",
+  "name": "Naruto & Boruto Shinobi-zato",
+  "description": "Tematický park v zábavním areálu Nijigen no Mori na ostrově Awaji v Japonsku, inspirovaný anime a mangou Naruto a Boruto.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Kusumoto 2425-2",
+    "addressLocality": "Awaji City",
+    "addressRegion": "Hyogo Prefecture",
+    "postalCode": "656-2301",
+    "addressCountry": "JP"
+  },
+  "url": "https://nijigennomori.com/en/naruto_shinobizato/",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Jak se dostat do Japonska s Thylacine",
+    "url": "https://sthylacine.github.io/jaksedostatdojaponska-uvod/naruto-boruto-shinobi-zato-park-konoha-listova-vesnice-awaji-japonsko"
+  }
+}
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Aplikace s ninjutsu efekty v parku Naruto & Boruto Shinobi-zato",
+  "description": "Jak využít mobilní aplikaci s efekty Chidori a Katon na fotkách v parku Nijigen no Mori na Awaji.",
+  "author": {
+    "@type": "Person",
+    "name": "Thylacine"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Jak se dostat do Japonska s Thylacine",
+    "url": "https://sthylacine.github.io/jaksedostatdojaponska-uvod/naruto-boruto-shinobi-zato-park-konoha-listova-vesnice-awaji-japonsko"
+  }
+}
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Ubytování v Hokage rezidenci poblíž parku Naruto & Boruto Shinobi-zato",
+  "description": "Tip na ubytování v resortu Grand Chariot ve stylu Hokage rezidence v blízkosti parku na ostrově Awaji.",
+  "author": {
+    "@type": "Person",
+    "name": "Thylacine"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Jak se dostat do Japonska s Thylacine",
+    "url": "https://sthylacine.github.io/jaksedostatdojaponska-uvod/naruto-boruto-shinobi-zato-park-konoha-listova-vesnice-awaji-japonsko"
+  }
+}
+  </script>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a href="index.html" class="navbar-brand">
+      <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>
+      Jak se dostat do Japonska
+    </a>
+    <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Úvod</a></li>
+      <li><a href="jak-se-dostat-do-japonska.html">Jak začít?</a></li>
+      <li><a href="jr-pass-vlaky-prukaz-jak-se-dostat-do-japonska-thylacine.html">JR PASS</a></li>
+      <li><a href="naruto-boruto-shinobi-zato-park-konoha-listova-vesnice-awaji-japonsko.html"class="active">Naruto &amp; Boruto Park</a></li>
+     <li class="has-dropdown">
+  <a href="blog-jak-se-dostat-do-japonska-modry-drak-seiryu-chram-kiyomizu-dera-automaty-na-jidlo-piti-co-sbalit-na-dovolenou.html"
+     class="nav-toggle">
+    BLOG
+    <svg viewBox="0 0 10 6">
+      <path d="M0 0l5 6 5-6z"/>
+    </svg>
+  </a>
+        <ul class="dropdown">
+          <li><a href="seiryu-obrad-kjoto-jak-se-dostat-do-japonska-thylacine.html">Obřad Seiryu-e</a></li>
+          <li><a href="chram-kiyomizu-dera-ja-se-dostat-do-japonska-s-thylacine-bez-cestovky.html">Chrám Kiyomizu-dera</a></li>
+          <li><a href="blog-co-sbalit-do-japonska-thylacine-bez-cestovky-vizum.html">Co si sbalit?</a></li>
+          <li><a href="automaty-na-jidlo-a-pití-v-japonsku-thylacine-bez-cestovky-jak-se-dostat-do-japonska-tokio.html">Automaty na jídlo a pití!</a></li>
+        </ul>
+      </li>
+      <li class="has-dropdown">
+        <span class="nav-toggle" id="dropdown-toggle">Více
+          <svg viewBox="0 0 10 6"><path d="M0 0l5 6 5-6z"/></svg>
+        </span>
+        <ul class="dropdown">
+          <li><a href="fotogalerie-thylacine-jak-se-dostat-do-japonska.html">Fotogalerie</a></li>
+          <li><a href="itinerar-japonsko-bez-cestovky-itinerar-thylacine.html">Jak naplánovat itinerář?</a></li>
+          <li><a href="onsen-jak-se-dostat-do-japonska-thylacine.html">Jak postupovat v onsenu?</a></li>
+          <li><a href="jak-drahe-je-japonsko-rozpocet-thylacine.html">Rozpočet</a></li>
+          <li><a href="formulare-na-letisti-vizum-declaration-jak-se-dostat-do-japonska-thylacine.html">Formuláře na letišti</a></li>
+          <li><a href="gdpr.html">GDPR</a></li>
+          <li><a href="jak-se-dostat-do-japonska-s-thylacine-otazky-a-odpovedi-vizum.html">Otázky a odpovědi</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <h1>Naruto &amp; Boruto Shinobizato</h1>
+    <p class="subtitle">Aneb vítejte v listové vesnici!</p>
+    <div class="hero-rule"></div>
+    <div class="hero-img">
+      <img
+        src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=1200&q=80"
+        alt="Torii brána v lese – vstup do tematického parku Naruto & Boruto Shinobi-zato na ostrově Awaji"
+      />
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div class="page-wrap">
+
+    <!-- LEFT INFO COLUMN -->
+    <aside class="info-col">
+
+      <div class="info-box">
+        <div class="info-box-title">Aktuální informace a vstupenky:</div>
+        <div class="info-box-body">
+          <p>– vstupenky není nutné rezervovat, zakoupíte je bez problému na místě ;)</p>
+          <p><a href="https://nijigennomori.com/en/naruto_shinobizato/" target="_blank">https://nijigennomori.com/en/naruto_shinobizato/</a></p>
+        </div>
+      </div>
+
+      <div class="info-box">
+        <div class="info-box-title">Jak se tam dostat:</div>
+        <div class="info-box-body">
+          <p>– cesta může být trochu komplikovaná, a tak když nebudete vědět, zeptejte se místních jako my, kteří jsme zvolili cestu vlakem z Osaky do Maiko, poté busem do Awaji IC a odtamtud už jen pár minut cesty pěšky až do Nijigen no Mori. Bez pomoci jednoho velmi ochotného pána bychom však asi nástupiště jen tak netrefili. Postačil nám k tomu hlasový překladač a nikdo nepotřeboval ani umět anglicky.</p>
+          <p>→ 656-2301 Kusumoto, Awaji City, Hyogo Prefecture 2425-2</p>
+        </div>
+      </div>
+
+      <img
+        class="col-img"
+        src="https://images.unsplash.com/photo-1528164344705-47542687000d?w=800&q=80"
+        alt="Bambusový les – atmosféra ninja vesnice Konoha v parku Shinobi-zato"
+      />
+
+      <img
+        class="col-img"
+        src="https://images.unsplash.com/photo-1480796927426-f609979314bd?w=800&q=80"
+        alt="Tradiční dřevěná japonská vesnička – styl listové vesnice Konoha"
+      />
+
+      <img
+        class="col-img"
+        src="https://images.unsplash.com/photo-1576675466969-38eeae4b41f6?w=800&q=80"
+        alt="Japonská brána a příroda na ostrově Awaji poblíž parku Nijigen no Mori"
+      />
+
+      <img
+        class="col-img"
+        src="https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=800&q=80"
+        alt="Japonská zahrada s kamennými lampami v ninja stylu – atmosféra parku Shinobi-zato na Awaji"
+      />
+
+      <img
+        class="col-img"
+        src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=800&q=80"
+        alt="Lesní cesta připomínající trasy ninjů z anime Naruto na ostrově Awaji"
+      />
+
+      <img
+        class="col-img"
+        src="https://images.unsplash.com/photo-1528164344705-47542687000d?w=800&q=80"
+        alt="Bambusový háj – typická scenérie kolem ninja vesnice Konoha v parku Naruto & Boruto"
+      />
+
+    </aside>
+
+    <!-- RIGHT ARTICLE -->
+    <article class="article">
+
+      <!-- NAVŠTÍVILI JSME KONOHU -->
+      <div class="section-block">
+        <h2 id="naruto-boruto-shinobi-zato-park-awaji">Navštívili jsme Konohu!</h2>
+
+        <div class="intro-bq">
+          <p>Jestli patříte mezi fanoušky japonského anime nebo mangy „Naruto" jako já, rozhodně navštivte Naruto &amp; Boruto Shinobizato v Nijigen no Mori na ostrově Awaji!</p>
+        </div>
+
+        <p>Budete se tam cítit jako v jedné z uliček Konohy se všemi věrohodnými postavami, dáte si výborný Narutův Ichiraku rámen a teď to nejlepší: <strong>Stanete se opravdovým Naruto ninjou, a to jak fyzicky, tak intelektem!</strong> Budete totiž řešit zapeklité úkoly po celém parku, vyšetřovat, kdo zradil Vaši vesnici, a také projdete dřevěným několika patrovým bludištěm, kde budete otvírat různé brány živlů a snažit se zachránit Naruta z nové řady Boruto.</p>
+
+        <p class="bold-note">Pokud si myslíte, že úkoly zmáknete levou zadní, tak pozor!</p>
+
+        <p>Pořadatelé se náramně vyřádili v zapeklitosti a opravdu se jedná o náročné úkoly – obzvlášť ve vyšetřovací části. Je dobré mít s sebou nějakého kamaráda, ať na to nejste sami. Nám vyšetřovací část trvala asi 2 hodiny, ale nebojte, je to hlavně zábava. U vstupu si vyberete, které úkoly chcete řešit a od toho se také odvíjí cena. Žádnou závratnou částku ale nečekejte: Pro 1 osobu vyšla Golden vstupenka na asi 750 Kč s 1 vyšetřovacím úkolem a 2 dalšími: Svitkem Nebe (Ten no maki) a Svitkem Země (Chi no maki).</p>
+
+        <p>Vyřešit všechny úkoly v rámci Golden Ticket nám zabralo asi půl dne i s obědem na místě, tak určitě přijďte na svoji misi včas.</p>
+
+        <p><strong>A jaká odměna Vás čeká za vyřešení úkolů s Golden Ticket?</strong></p>
+        <p>Kromě nezapomenutelného zážitku si na památku odnesete své svitky, pohlednice, plakáty a sběratelské ZLATÉ kartičky s hlavními hrdiny, které si sami vylosujete.</p>
+      </div>
+
+      <!-- APPKA -->
+      <div class="section-block">
+        <h2 id="naruto-aplikace-ninjutsu-foto">Appka se postará o badass fotky</h2>
+        <p>Pokud vlastníte iPhone, můžete si stáhnout zdarma aplikaci, která Vám na fotkách vytvoří <strong>efekty ninjutsu</strong> jako je např. „Chidori" nebo „Katon". A to na specifických místech přímo v parku. Appka existuje i pro Android, avšak mně bohužel nefungovala. Nicméně, nebyla jsem vůbec zklamaná, jelikož na toto focení ani nevyšel čas.</p>
+
+        <div class="article-img full">
+          <img src="https://images.unsplash.com/photo-1480796927426-f609979314bd?w=1200&q=80" alt="Dřevěná vesnička v japonském stylu – atmosféra Naruto & Boruto Shinobi-zato parku na Awaji" />
+          <p class="img-caption">Atmosféra parku Naruto &amp; Boruto Shinobi-zato</p>
+        </div>
+      </div>
+
+      <!-- POKOJ JAKO PRO HOKAGE -->
+      <div class="section-block">
+        <h2 id="ubytovani-hokage-rezidence-awaji">Pokoj jako pro Hokage?</h2>
+        <p>Pokud nevíte, co s penězi, nebo hodláte koupit ultra dárek těm nejbližším, rezervujte si pobyt <strong>ve vile laděné do sídla samotného Hokage!</strong> Pokoj je až pro 4 osoby, tak vězměte kamarády a společně určitě ušetříte. V ceně máte jak snídani, tak večeři v tradičním japonském stylu a čeká Vás taky tématická koupel. Resort Grand Chariot se nalézá blízko parku, tak zde můžete rovnou i přespat. Více o rezervaci <a href="https://nijigennomori.com/en/naruto_shinobizato/" target="_blank">zde</a>.</p>
+
+        <div class="article-img">
+          <img src="https://images.unsplash.com/photo-1578469550956-0e16b69c6a3d?w=1200&q=80" alt="Tradiční japonský resort s tematickým interiérem ve stylu Hokage – ubytování Grand Chariot poblíž parku Naruto & Boruto" />
+          <p class="img-caption">Resort Grand Chariot – ubytování jako v sídle Hokage</p>
+        </div>
+
+        <div class="article-img">
+          <img src="https://images.unsplash.com/photo-1522383225653-ed111181a951?w=1200&q=80" alt="Japonská tradiční koupel v resortu – tématický zážitek v Naruto & Boruto Shinobi-zato na Awaji" />
+          <p class="img-caption">Tématická koupel v tradičním japonském stylu</p>
+        </div>
+
+        <div class="article-img">
+          <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=1200&q=80" alt="Interiér japonského pokoje v ninja stylu – luxusní ubytování pro fanoušky Naruto & Boruto na Awaji" />
+          <p class="img-caption">Pokoje laděné do ninja stylu pro autentický zážitek</p>
+        </div>
+      </div>
+
+    </article>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>Fotografie jsou chráněny autorskými právy. Pro jejich použití pro vaše účely požádejte autora.</p>
+    <p>Některé odkazy na tomto webu mohou obsahovat affiliate odkazy. <span>Aktualizováno ke dni 14.5.2026.</span></p>
+  </footer>
+
+  <script>
+    document.getElementById('hamburger').addEventListener('click', function(){
+      document.getElementById('nav-links').classList.toggle('open');
+    });
+    document.getElementById('dropdown-toggle').addEventListener('click', function(){
+      this.closest('.has-dropdown').classList.toggle('open');
+    });
+  </script>
+
+</body>
+</html>
