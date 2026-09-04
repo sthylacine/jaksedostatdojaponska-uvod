@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sthylacine.github.io/jaksedostatdojaponska-uvod/sitemap.xml
