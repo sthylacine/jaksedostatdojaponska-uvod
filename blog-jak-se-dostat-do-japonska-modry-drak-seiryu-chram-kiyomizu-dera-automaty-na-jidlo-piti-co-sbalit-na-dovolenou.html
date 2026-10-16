@@ -104,22 +104,22 @@
     .hero-rule { width: 60px; height: 3px; background: var(--red); margin: 16px auto 0; }
 
     /* ===== BLOG LIST ===== */
-  .blog-wrap {
-    max-width: 1000px;   /* původně 900px */
-    margin: 52px auto 80px;
-    padding: 0 24px;
-}
+    .blog-wrap {
+      max-width: 900px;
+      margin: 52px auto 80px;
+      padding: 0 24px;
+    }
 
     /* ===== SINGLE POST ROW ===== */
-   .post-row {
+    .post-row {
       display: grid;
-      grid-template-columns: 330px 1fr;   /* původně 220px */
+      grid-template-columns: 220px 1fr;
       gap: 40px;
       align-items: start;
       margin-bottom: 60px;
       padding-bottom: 52px;
       border-bottom: 1px solid var(--light-grey);
-}
+    }
     .post-row:last-child {
       border-bottom: none;
       margin-bottom: 0;
@@ -135,11 +135,18 @@
       max-width: 100%;
     }
 
+    /* Oříznutí obrázku Seiryu na horní polovinu (200 x 290 → 200 x 145) */
+    .post-thumb.crop-half {
+      aspect-ratio: 200 / 145;
+      object-fit: cover;
+      object-position: top;
+    }
+
     /* Post title - Heading size 1.50rem */
     .post-title {
       font-family: var(--font-display);
       font-weight: 700;
-      font-size: 1.56rem;
+      font-size: 1.50rem;
       letter-spacing: 0.06em;
       color: var(--black);
       text-transform: uppercase;
@@ -150,21 +157,22 @@
     .post-row:hover .post-title { color: var(--red); }
 
     /* Date */
-.post-date {
-  font-family: var(--font-body);
-  font-size: 1.1rem;   /* původně 0.9rem */
-  color: var(--grey);
-  margin-bottom: 14px;
-  display: block;
-  line-height: 1.82;
-}
+    .post-date {
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      color: var(--grey);
+      margin-bottom: 14px;
+      display: block;
+      line-height: 1.82;
+    }
 
-.post-excerpt {
-  font-family: var(--font-body);
-  font-size: 1.1rem;   /* původně 0.9rem */
-  line-height: 1.82;
-  color: #333;
-}
+    /* Excerpt - Body text 0.9rem / 1.82 */
+    .post-excerpt {
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      line-height: 1.82;
+      color: #333;
+    }
     .post-excerpt strong { font-weight: 700; color: var(--black); }
     .post-excerpt em { font-style: italic; }
 
@@ -312,7 +320,7 @@
     <!-- POST 1 – SEIRYU-E -->
     <div class="post-row">
       <img
-        class="post-thumb"
+        class="post-thumb crop-half"
         src="images/Seiryuthylacine.webp"
         alt="Obřad modrého draka Seiryu v chrámu Kiyomizu-dera v Kjótu, Japonsko, cestovní průvodce Thylacine"
       />
