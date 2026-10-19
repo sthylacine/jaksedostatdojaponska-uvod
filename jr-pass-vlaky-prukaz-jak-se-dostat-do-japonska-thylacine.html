@@ -115,12 +115,12 @@
     .hero-rule { width: 60px; height: 3px; background: var(--red); margin: 16px auto 0; }
 
     /* ===== MAIN LAYOUT ===== */
-    .page-wrap {
-      max-width: 1040px;
+       .page-wrap {
+      max-width: 1140px;
       margin: 0 auto;
       padding: 48px 24px 80px;
       display: grid;
-      grid-template-columns: 320px 1fr;
+      grid-template-columns: 400px 1fr;
       gap: 52px;
       align-items: start;
     }
@@ -139,13 +139,14 @@
       font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
       padding: 10px 16px;
     }
-    .info-box-body {
+       .info-box-body {
       padding: 16px;
       font-size: 1.15rem;
       line-height: 1.82;
       color: #333;
       text-align: justify;
-      hyphens: auto;
+    }
+    .info-box-body p:has(a) { text-align: left; 
     }
     .info-box-body a {
       color: var(--red);
