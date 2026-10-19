@@ -130,7 +130,7 @@
     }
     .info-box-title {
       font-family: var(--font-display);
-      font-size: 0.82rem; font-weight: 700;
+      font-size: 1.00rem; font-weight: 700;
       letter-spacing: 0.08em; text-transform: uppercase;
       color: var(--red);
       padding: 12px 16px 4px;
@@ -138,7 +138,7 @@
     }
     .info-box-body {
       padding: 14px 16px;
-      font-size: 0.9rem;
+      font-size: 1.1rem;
       line-height: 1.82;
       color: #333;
     }
@@ -175,14 +175,14 @@
 
     .section-block h2 {
       font-family: var(--font-display);
-      font-size: 1.50rem; font-weight: 700;
+      font-size: 1.70rem; font-weight: 700;
       text-transform: uppercase; letter-spacing: 0.06em;
       color: var(--black);
       margin-bottom: 14px;
     }
 
     .section-block p {
-      font-size: 0.9rem; line-height: 1.82;
+      font-size: 1.1rem; line-height: 1.82;
       color: #333; margin-bottom: 11px;
     }
     .section-block p:last-child { margin-bottom: 0; }
@@ -200,7 +200,7 @@
     .intro-bq p {
       font-family: var(--font-serif);
       font-style: italic;
-      font-size: 1.05rem !important;
+      font-size: 1.25rem !important;
       line-height: 1.7 !important;
       color: var(--black) !important;
       margin: 0 !important;
@@ -208,7 +208,7 @@
 
     .bold-note {
       font-weight: 700;
-      font-size: 0.93rem;
+      font-size: 1.15rem;
       color: var(--black);
       margin-bottom: 14px;
       display: block;
@@ -218,7 +218,7 @@
     .article-img { margin: 20px 0; }
     .article-img img { width: 100%; height: auto; object-fit: contain; display: block; }
     .article-img.full img { max-height: 420px; object-fit: contain; }
-    .img-caption { font-size: 0.72rem; color: var(--grey); font-style: italic; text-align: center; margin-top: 4px; }
+    .img-caption { font-size: 1.00rem; color: var(--grey); font-style: italic; text-align: center; margin-top: 4px; }
 
     /* ===== FOOTER ===== */
     footer {
@@ -324,7 +324,7 @@
       <li><a href="index.html">Úvod</a></li>
       <li><a href="jak-se-dostat-do-japonska.html">Jak začít?</a></li>
       <li><a href="jr-pass-vlaky-prukaz-jak-se-dostat-do-japonska-thylacine.html">JR PASS</a></li>
-      <li><a href="naruto-boruto-shinobi-zato-park-konoha-listova-vesnice-awaji-japonsko.html"class="active">Naruto &amp; Boruto Park</a></li>
+      <li><a href="naruto-boruto-shinobi-zato-park-konoha-listova-vesnice-awaji-japonsko.html" class="active">Naruto &amp; Boruto Park</a></li>
      <li class="has-dropdown">
   <a href="blog-jak-se-dostat-do-japonska-modry-drak-seiryu-chram-kiyomizu-dera-automaty-na-jidlo-piti-co-sbalit-na-dovolenou.html"
      class="nav-toggle">
@@ -499,8 +499,10 @@
     document.getElementById('hamburger').addEventListener('click', function(){
       document.getElementById('nav-links').classList.toggle('open');
     });
-    document.getElementById('dropdown-toggle').addEventListener('click', function(){
-      this.closest('.has-dropdown').classList.toggle('open');
+    document.querySelectorAll('.nav-toggle').forEach(function(toggle) {
+      toggle.addEventListener('click', function(){
+        this.closest('.has-dropdown').classList.toggle('open');
+      });
     });
   </script>
 
