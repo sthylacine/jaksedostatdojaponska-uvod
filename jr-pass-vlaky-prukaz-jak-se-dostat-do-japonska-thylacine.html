@@ -114,8 +114,6 @@
     }
     .hero-rule { width: 60px; height: 3px; background: var(--red); margin: 16px auto 0; }
 
-    
-
     /* ===== MAIN LAYOUT ===== */
     .page-wrap {
       max-width: 1040px;
@@ -146,6 +144,7 @@
       font-size: 1.15rem;
       line-height: 1.82;
       color: #333;
+      text-align: justify;
     }
     .info-box-body a {
       color: var(--red);
@@ -158,8 +157,6 @@
     .info-box-body strong { color: var(--black); font-weight: 700; }
     .red-label { color: var(--red); font-weight: 700; }
     .bq-highlight { border-top: 3px solid var(--red); }
-
-    /* duplicate rule removed */
 
     /* sidebar column images */
     .col-img {
@@ -198,7 +195,7 @@
     .article-img { margin: 20px 0; }
     .article-img img { width: 100%; height: auto; display: block; object-fit: contain; max-width: 100%; }
     .article-img.full img { max-height: 420px; object-fit: contain; height: auto; }
-    .img-caption { font-size: 0.60rem; color: var(--black); font-style: italic; text-align: center; margin-top: 4px; }
+    .img-caption { font-size: 1.00rem; color: var(--black); font-style: italic; text-align: center; margin-top: 4px; }
 
     /* intro block – image left, text right */
     .intro-block {
@@ -215,12 +212,12 @@
     }
     .intro-text h2 {
       font-family: var(--font-display);
-      font-size: 1.50rem; font-weight: 700;
+      font-size: 1.70rem; font-weight: 700;
       text-transform: uppercase; letter-spacing: 0.06em;
       color: var(--black); margin-bottom: 14px;
     }
     .intro-text p {
-      font-size: 0.9rem; line-height: 1.82;
+      font-size: 1.1rem; line-height: 1.82;
       color: #333; margin-bottom: 11px;
     }
     .intro-text p em { font-style: italic; }
@@ -233,9 +230,9 @@
       background: var(--white);
     }
     .bq p {
-      font-body:'Roboto', sans-serif;
+      font-family: var(--font-body);
       font-style: italic;
-      font-size: 0.9rem;
+      font-size: 1.1rem;
       line-height: 1.82;
       color: var(--black);
       margin: 0;
@@ -258,7 +255,7 @@
   </style>
   <script type="application/ld+json">
   {
-  "@context": "s://schema.org",
+  "@context": "https://schema.org",
   "@type": "Article",
   "headline": "Cestování vlaky v Japonsku",
   "description": "Proč jsou vlaky nejrychlejším a nejpohodlnějším způsobem dopravy po Japonsku.",
@@ -286,7 +283,7 @@
   "isPartOf": {
     "@type": "WebSite",
     "name": "Jak se dostat do Japonska s Thylacine",
-    "url": "https://sthylacine.github.io/jaksedostatdojaponska-uvod.html
+    "url": "https://sthylacine.github.io/jaksedostatdojaponska-uvod/jr-pass-vlaky-prukaz-jak-se-dostat-do-japonska-thylacine.html"
   }
 }
   </script>
@@ -303,7 +300,7 @@
   "isPartOf": {
     "@type": "WebSite",
     "name": "Jak se dostat do Japonska s Thylacine",
-    "url": "https://sthylacine.github.io/jaksedostatdojaponska-uvod.html
+    "url": "https://sthylacine.github.io/jaksedostatdojaponska-uvod/jr-pass-vlaky-prukaz-jak-se-dostat-do-japonska-thylacine.html"
   }
 }
   </script>
@@ -320,7 +317,7 @@
   "isPartOf": {
     "@type": "WebSite",
     "name": "Jak se dostat do Japonska s Thylacine",
-    "url": "https://sthylacine.github.io/jaksedostatdojaponska-uvod.html
+    "url": "https://sthylacine.github.io/jaksedostatdojaponska-uvod/jr-pass-vlaky-prukaz-jak-se-dostat-do-japonska-thylacine.html"
   }
 }
   </script>
@@ -337,7 +334,7 @@
   "isPartOf": {
     "@type": "WebSite",
     "name": "Jak se dostat do Japonska s Thylacine",
-    "url": "https://sthylacine.github.io/jaksedostatdojaponska-uvod.html
+    "url": "https://sthylacine.github.io/jaksedostatdojaponska-uvod/jr-pass-vlaky-prukaz-jak-se-dostat-do-japonska-thylacine.html"
   }
 }
   </script>
@@ -356,7 +353,7 @@
     <ul class="nav-links" id="nav-links">
       <li><a href="index.html">Úvod</a></li>
       <li><a href="jak-se-dostat-do-japonska.html">Jak začít?</a></li>
-      <li><a href="jr-pass-vlaky-prukaz-jak-se-dostat-do-japonska-thylacine.html"  class="active">JR PASS</a></li>
+      <li><a href="jr-pass-vlaky-prukaz-jak-se-dostat-do-japonska-thylacine.html" class="active">JR PASS</a></li>
       <li><a href="naruto-boruto-shinobi-zato-park-konoha-listova-vesnice-awaji-japonsko.html">Naruto &amp; Boruto Park</a></li>
      <li class="has-dropdown">
   <a href="blog-jak-se-dostat-do-japonska-modry-drak-seiryu-chram-kiyomizu-dera-automaty-na-jidlo-piti-co-sbalit-na-dovolenou.html"
@@ -502,8 +499,10 @@
     document.getElementById('hamburger').addEventListener('click', function(){
       document.getElementById('nav-links').classList.toggle('open');
     });
-    document.getElementById('dropdown-toggle').addEventListener('click', function(){
-      this.closest('.has-dropdown').classList.toggle('open');
+    document.querySelectorAll('.nav-toggle').forEach(function(toggle) {
+      toggle.addEventListener('click', function(){
+        this.closest('.has-dropdown').classList.toggle('open');
+      });
     });
   </script>
 
