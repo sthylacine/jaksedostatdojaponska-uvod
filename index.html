@@ -534,6 +534,21 @@
     /* banner se při najetí myší nezvětšuje (nerozmaže se) */
     .gallery-item:hover .banner img { transform: none; }
 
+        /* široký banner přes celou šířku galerie */
+    .gallery-item.wide {
+      grid-column: 1 / -1;
+      margin-top: 24px;
+      text-align: center;
+    }
+    .gallery-item.wide img {
+      width: 100%;
+      max-width: 1200px;
+      height: auto;
+      margin: 0 auto;
+    }
+    .gallery-item.wide:hover img { transform: none; }
+    
+
     /* ===== FOOTER ===== */
     footer {
       background: var(--black);
@@ -879,6 +894,23 @@
           />
           <p class="gallery-caption">Osaka Castle</p>
         </div>
+
+                <div class="gallery-item">
+          <img
+            class="landscape"
+            src="images/thylacineOsakaCastle.webp"
+            alt="ósacký hrad Osaka Castle v Osaka Castle park, sjednocování Japonska v 16. století Tojotomi Hidejoši, jak se dostat do Japonska s Thylacine"
+          />
+          <p class="gallery-caption">Osaka Castle</p>
+        </div>
+
+        <!-- Japan Bullet Train -->
+        <div class="gallery-item wide">
+          <a href="https://www.japan-bullettrain.com/?via=thylacine" target="_blank" rel="noopener sponsored">
+            <img src="images/1200x300_BLUE.webp" alt="Japan Bullet Train - Online jízdenky na šinkanseny po celém Japonsku!" width="1200" height="300" loading="lazy" />
+          </a>
+          <p class="gallery-caption">Online jízdenky na šinkanseny po celém Japonsku!</p>
+      </div>
 
       </div>
     </div>
